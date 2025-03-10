@@ -33,3 +33,51 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-anta) !important; /* ✅ Anta par défaut pour le site */
 }
+
+/* ✅ Cache le bouton au départ */
+.hidden-button {
+  opacity: 0;
+}
+
+/* ✅ Animation pour l'apparition progressive */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out 3s forwards;
+}
+
+/* ✅ Effet de remplissage progressif au hover */
+.button-hover-effect {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-hover-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #A0B43C;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button-hover-effect:hover::before {
+  transform: scaleX(1);
+}
+
+.button-hover-effect .text {
+  position: relative;
+  z-index: 10;
+  color: #A0B43C; /* ✅ Texte visible au départ */
+  transition: color 0.5s ease-in-out;
+}
+
+.button-hover-effect:hover .text {
+  color: white; /* ✅ Texte devient blanc au hover */
+}

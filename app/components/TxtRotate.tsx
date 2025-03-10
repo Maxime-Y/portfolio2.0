@@ -25,7 +25,7 @@ const TxtRotate = ({
     // ✅ Attendre 5s avant de commencer l'écriture
     const delayTimeout = setTimeout(() => {
       setStartTyping(true);
-    }, 5000);
+    }, 4000);
 
     return () => clearTimeout(delayTimeout);
   }, []);
@@ -74,7 +74,7 @@ const TxtRotate = ({
 
   return (
     <span
-      className="text-[#B8C650] text-xl sm:text-xl relative"
+      className="text-[#A0B43C] text-xl sm:text-xl relative"
       style={{ fontFamily: "var(--font-silkscreen)" }} 
     >
       Hello {startTyping ? displayedText : ""} 
