@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Anta, Dancing_Script } from "next/font/google";
+import { Geist, Geist_Mono, Anta, Dancing_Script, Silkscreen } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +14,12 @@ const geistMono = Geist_Mono({
 
 const anta = Anta({
   variable: "--font-anta",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const silkscreen = Silkscreen({
+  variable: "--font-silkscreen",
   subsets: ["latin"],
   weight: "400",
 });
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${anta.variable} ${dancingScript.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${anta.variable} ${dancingScript.variable} ${silkscreen.variable} antialiased`}
       >
         {children}
       </body>

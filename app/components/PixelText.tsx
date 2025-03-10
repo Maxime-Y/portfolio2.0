@@ -17,7 +17,7 @@ export default function PixelText({ text }: { text: string }) {
 
     // Configuration du canvas
     canvas.width = 800;
-    canvas.height = 200;
+    canvas.height = 80;
     ctx.fillStyle = "black";
     ctx.font = "bold 100px Anta";
     ctx.textAlign = "center";
@@ -70,7 +70,7 @@ export default function PixelText({ text }: { text: string }) {
 
   return (
     <div
-      className="relative w-[800px] h-[200px]"
+      className="relative w-[800px] h-[60px]"
       style={{
         opacity: opacity,
         transition: "opacity 1s ease-in-out",
