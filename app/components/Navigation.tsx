@@ -79,7 +79,7 @@ export default function Navigation() {
               animate={{ x: "0%" }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="fixed top-0 right-0 w-[260px] h-full bg-[#EFF2D9]/80 shadow-lg z-40 flex flex-col items-center justify-center space-y-4 md:hidden"
+              className="fixed top-0 right-0 w-[260px] h-full bg-[#FAFBEF]/80 shadow-lg z-40 flex flex-col items-center justify-center space-y-4 md:hidden"
             >
               {/* ✅ Liste des onglets (animation séquencée) */}
               {navItems.map((item, index) => (

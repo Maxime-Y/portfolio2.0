@@ -43,9 +43,8 @@ export default function Home() {
       {/* ✅ Texte en mode apparition pixelisée */}
       <div
         className="          
-          [transform:scale(0.4)]
-          xs:[transform:scale(0.9)]
-          sm:[transform:scale(0.6)]
+          [transform:scale(0.5)]          
+          sm:[transform:scale(0.7)]
           md:[transform:scale(1)]
         "
       >
