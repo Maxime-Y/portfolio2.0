@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { scrollToSection } from "../utils/scroll";
+
 
 const navItems = ["Profil", "Compétences", "Projets", "Contact"];
 
@@ -9,7 +11,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="absolute top-4 right-6 flex items-center z-50">
+    <nav className="fixed top-4 right-6 flex items-center z-50">
       {/* ✅ Navigation Desktop (>=768px) - Onglets alignés à DROITE */}
       <ul className="hidden md:flex space-x-6 text-[#666666] text-2xl">
         {navItems.map((item, index) => (
@@ -17,10 +19,18 @@ export default function Navigation() {
             key={item}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 2.5 + index * 0.3 }} 
+            transition={{ duration: 0.5, delay: 2.8 + index * 0.3 }}
             className="relative group cursor-pointer"
           >
-            <a href={`#${item.toLowerCase()}`} className="relative inline-block">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                if (item === "Profil") {
+                  scrollToSection("profil");
+                }
+              }}
+              className="relative inline-block cursor-pointer"
+            >
               {item}
               {/* ✅ Soulignement progressif en CSS */}
               <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-[#666666] transition-all duration-200 group-hover:w-full"></span>
@@ -79,7 +89,7 @@ export default function Navigation() {
               animate={{ x: "0%" }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="fixed top-0 right-0 w-[260px] h-full bg-[#FAFBEF]/80 shadow-lg z-40 flex flex-col items-center justify-center space-y-4 md:hidden"
+              className="fixed top-0 right-0 w-[260px] h-full bg-[#F2F3EE]/80 shadow-lg z-40 flex flex-col items-center justify-center space-y-4 md:hidden"
             >
               {/* ✅ Liste des onglets (animation séquencée) */}
               {navItems.map((item, index) => (
@@ -92,7 +102,13 @@ export default function Navigation() {
                 >
                   {/* ✅ Texte de l'onglet CENTRÉ */}
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(false); // Ferme le menu burger après le clic
+                      if (item === "Profil") {
+                        scrollToSection("profil");
+                      }
+                    }}
                     className="cursor-pointer text-2xl block py-3 relative transition-all duration-250 text-[#666666] 
                               bg-gradient-to-r from-[#A0B43C] to-[#A0B43C] bg-[length:0%_100%] bg-left-bottom bg-no-repeat 
                               hover:bg-[length:100%_100%] bg-clip-text hover:text-[#A0B43C]"
