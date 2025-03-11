@@ -17,7 +17,7 @@ export default function PixelText({ text }: { text: string }) {
 
     // Configuration du canvas
     canvas.width = 800;
-    canvas.height = 80;
+    canvas.height = 90;
     ctx.fillStyle = "black";
     ctx.font = "bold 100px Anta";
     ctx.textAlign = "center";
@@ -70,7 +70,7 @@ export default function PixelText({ text }: { text: string }) {
 
   return (
     <div
-      className="relative w-[800px] h-[60px]"
+      className="relative w-[800px] h-[80px]"
       style={{
         opacity: opacity,
         transition: "opacity 1s ease-in-out",
@@ -81,7 +81,7 @@ export default function PixelText({ text }: { text: string }) {
         {visiblePixels.map((pixel, index) => (
           <span
             key={index}
-            className="absolute bg-black w-[5px] h-[5px]"
+            className="absolute bg-[#000000] w-[5px] h-[5px]"
             style={{
               top: pixel.y,
               left: pixel.x,

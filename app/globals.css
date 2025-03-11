@@ -28,6 +28,11 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
@@ -60,7 +65,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: #A0B43C;
+  background: #666666;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
@@ -74,7 +79,7 @@ body {
 .button-hover-effect .text {
   position: relative;
   z-index: 10;
-  color: #A0B43C; /* ✅ Texte visible au départ */
+  color: #666666; /* ✅ Texte visible au départ */
   transition: color 0.5s ease-in-out;
 }
 

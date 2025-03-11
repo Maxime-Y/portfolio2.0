@@ -74,7 +74,13 @@ const TxtRotate = ({
 
   return (
     <span
-      className="text-[#A0B43C] text-xl sm:text-xl relative"
+      className="text-[#A0B43C] 
+                 text-[15px]        
+                 xs:text-sm          
+                 sm:text-lg          
+                 md:text-xl          
+                 lg:text-2xl 
+                 relative"
       style={{ fontFamily: "var(--font-silkscreen)" }} 
     >
       Hello {startTyping ? displayedText : ""} 
@@ -82,7 +88,7 @@ const TxtRotate = ({
         className="absolute"
         style={{
           marginLeft: "3px",
-          color: "#171717", 
+          color: "#4A4A4A", 
           visibility: cursorVisible ? "visible" : "hidden",
         }}
       >
