@@ -3,14 +3,13 @@
 import { useEffect, useState } from "react";
 
 export default function TxtToDisplay() {
-  const fullText = "Développeur Junior"; // ✅ Texte à afficher
-  const [displayedText, setDisplayedText] = useState(""); // Texte affiché progressivement
-  const [index, setIndex] = useState(0); // Index actuel
-  const [isTypingStarted, setIsTypingStarted] = useState(false); // ✅ Démarrage différé
-  const [speed, setSpeed] = useState(30); // ✅ Vitesse initiale (encore plus rapide)
+  const fullText = "Développeur Junior"; 
+  const [displayedText, setDisplayedText] = useState(""); 
+  const [index, setIndex] = useState(0); 
+  const [isTypingStarted, setIsTypingStarted] = useState(false); 
+  const [speed, setSpeed] = useState(30); 
 
   useEffect(() => {
-    // ✅ Attendre 0.7s avant de commencer l'écriture
     const startTimeout = setTimeout(() => {
       setIsTypingStarted(true);
     }, 700);
@@ -19,14 +18,12 @@ export default function TxtToDisplay() {
   }, []);
 
   useEffect(() => {
-    if (!isTypingStarted || index >= fullText.length) return; // Bloque tant que le délai n'est pas passé
+    if (!isTypingStarted || index >= fullText.length) return; 
 
     const timeout = setTimeout(() => {
       setDisplayedText(fullText.substring(0, index + 1));
       setIndex((prevIndex) => prevIndex + 1);
-
-      // ✅ On réduit la vitesse de 10ms à chaque lettre
-      // ✅ Limite minimale de 5ms pour autoriser une écriture très rapide
+      
       setSpeed((prevSpeed) => Math.max(5, prevSpeed - 10));
 
     }, speed);

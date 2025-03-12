@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 interface TxtRotateProps {
-  words: string[]; // Liste des mots à afficher
-  typingSpeed?: number; // Vitesse de frappe
-  deletingSpeed?: number; // Vitesse d'effacement
-  delayBetweenWords?: number; // Temps avant le changement de mot
+  words: string[]; 
+  typingSpeed?: number; 
+  deletingSpeed?: number; 
+  delayBetweenWords?: number;
 }
 
 const TxtRotate = ({
@@ -19,10 +19,9 @@ const TxtRotate = ({
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
-  const [startTyping, setStartTyping] = useState(false); // ✅ Bloque l'écriture pendant 5s
+  const [startTyping, setStartTyping] = useState(false); // Bloque l'écriture pendant 5s
 
-  useEffect(() => {
-    // ✅ Attendre 5s avant de commencer l'écriture
+  useEffect(() => {   
     const delayTimeout = setTimeout(() => {
       setStartTyping(true);
     }, 4000);
@@ -31,7 +30,7 @@ const TxtRotate = ({
   }, []);
 
   useEffect(() => {
-    if (!startTyping) return; // ✅ Bloque l'animation tant que le délai n'est pas passé
+    if (!startTyping) return; // Bloque l'animation tant que le délai n'est pas passé
 
     let timeout: NodeJS.Timeout;
 

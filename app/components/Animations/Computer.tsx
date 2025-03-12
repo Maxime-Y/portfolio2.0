@@ -9,7 +9,7 @@ const Player = dynamic(
   { ssr: false }
 );
 
-export default function Ordinateur() {
+export default function Computer() {
   const playerRef = useRef<PlayerRef>(null);
 
   return (
@@ -17,7 +17,7 @@ export default function Ordinateur() {
       ref={playerRef as React.RefObject<PlayerRef>}
       speed={6}
       autoplay
-      src="/animations/3.json" // 🔥 Assure-toi que ce fichier existe !
+      src="/animations/3.json" 
       style={{ width: "300px", height: "300px", margin: "0 0 0 21px" }}
       onEvent={(event) => {
         if (event === "complete") {

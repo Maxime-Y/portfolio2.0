@@ -14,16 +14,13 @@ export default function PixelText({ text }: { text: string }) {
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
-    // Configuration du canvas
+    
     canvas.width = 800;
     canvas.height = 90;
     ctx.fillStyle = "black";
     ctx.font = "bold 100px Anta";
     ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-
-    // Écriture du texte sur le canvas
+    ctx.textBaseline = "middle";    
     ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
     // Récupération des pixels non transparents
@@ -61,9 +58,9 @@ export default function PixelText({ text }: { text: string }) {
         isDisappearing = true;
       } else if (visiblePixels.length === 0) {
         isDisappearing = false;
-        setPixels((prevPixels) => [...prevPixels].sort(() => Math.random() - 0.5)); // 🔥 Mélange à chaque reset !
+        setPixels((prevPixels) => [...prevPixels].sort(() => Math.random() - 0.5)); //  Mélange à chaque reset 
       }
-    }, 20); // Réglage de la vitesse d'apparition
+    }, 20); 
 
     return () => clearInterval(loopInterval);
   }, [pixels]);

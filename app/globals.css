@@ -8,17 +8,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
-  /* Variables des couleurs */
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* Variables des polices */
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-anta: "Anta", sans-serif;
   --font-dancing-script: "Dancing Script", cursive;
-  --font-silkscreen: "Silkscreen", sans-serif; /* ✅ Ajout de la police Silkscreen */
+  --font-silkscreen: "Silkscreen", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,15 +34,16 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-anta) !important; /* ✅ Anta par défaut pour le site */
+  font-family: var(--font-anta) !important;
 }
 
-/* ✅ Cache le bouton au départ */
+
 .hidden-button {
   opacity: 0;
 }
 
-/* ✅ Animation pour l'apparition progressive */
+/* bouton plus d'infos */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -54,7 +53,6 @@ body {
   animation: fadeIn 0.5s ease-in-out 3.2s forwards;
 }
 
-/* ✅ Effet de remplissage progressif au hover */
 .button-hover-effect {
   position: relative;
   overflow: hidden;
@@ -79,10 +77,10 @@ body {
 .button-hover-effect .text {
   position: relative;
   z-index: 10;
-  color: #666666; /* ✅ Texte visible au départ */
+  color: #666666;
   transition: color 0.5s ease-in-out;
 }
 
 .button-hover-effect:hover .text {
-  color: white; /* ✅ Texte devient blanc au hover */
+  color: white; 
 }
