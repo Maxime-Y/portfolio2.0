@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { scrollToSection } from "../utils/scroll";
 import Image from "next/image";
-import home from "../public/home.png"; 
+import home from "../public/home.png";
 
 const navItems = ["Profil", "Compétences", "Projets", "Contact"];
 
@@ -27,26 +27,36 @@ export default function Navigation() {
 
   return (
     <motion.nav
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
-  className={`fixed top-0 left-0 w-full py-2 px-6 z-50 ${
-    scrolled ? "bg-[#F2F3EE]/98 shadow-md" : "bg-transparent"
-  } flex justify-between items-center transition-all duration-300`}
->
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className={`fixed top-0 left-0 w-full pt-2 pb-5 px-6 z-50 flex justify-between items-center transition-all duration-300
+    ${scrolled
+          ? "bg-[linear-gradient(180deg,#F2F3EE_75%,rgba(160,180,60,0.6))] shadow-[0px_0px_150px_5px_rgba(160,180,60,0.8)]"
+          : "bg-transparent"
+        }`}
+    >
 
-      {/* LOGO LAPIN À GAUCHE */}
+      {/* LOGO home */}
       <div className="left">
-        <a onClick={() => scrollToSection("Home")} className="cursor-pointer">
-        <Image
-  src={home}
-  alt="Logo home"
-  width={50}
-  height={50}
-  className="object-contain filter invert-[30%] sepia-[5%] saturate-[200%] brightness-[80%] contrast-[120%]"
-/>
+        {/* LOGO À GAUCHE */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }} // Départ à gauche
+          animate={{ opacity: 1, x: 0 }} // Arrivée normale
+          transition={{ duration: 0.5, delay: 2.8 }} // Même délai que les onglets
+          className="left"
+        >
+          <a onClick={() => scrollToSection("Home")} className="cursor-pointer">
+            <Image
+              src={home}
+              alt="Logo home"
+              width={40}
+              height={40}
+              className="object-contain filter invert-[30%] sepia-[5%] saturate-[200%] brightness-[80%] contrast-[120%]"
+            />
+          </a>
+        </motion.div>
 
-        </a>
       </div>
 
       {/* NAVIGATION À DROITE */}
@@ -67,12 +77,12 @@ export default function Navigation() {
                     item === "Profil"
                       ? "profil"
                       : item === "Compétences"
-                      ? "competences"
-                      : item === "Projets"
-                      ? "projets"
-                      : item === "Contact"
-                      ? "contact"
-                      : item.toLowerCase();
+                        ? "competences"
+                        : item === "Projets"
+                          ? "projets"
+                          : item === "Contact"
+                            ? "contact"
+                            : item.toLowerCase();
                   scrollToSection(id);
                 }}
                 className="relative inline-block cursor-pointer"
@@ -147,12 +157,19 @@ export default function Navigation() {
                   className="w-full flex flex-col items-center"
                 >
                   <a
-                    onClick={(e) => {
-                      e.preventDefault();
+                    onClick={() => {
                       setIsOpen(false);
-                      if (item === "Profil") {
-                        scrollToSection("profil");
-                      }
+                      const id =
+                        item === "Profil"
+                          ? "profil"
+                          : item === "Compétences"
+                            ? "competences"
+                            : item === "Projets"
+                              ? "projets"
+                              : item === "Contact"
+                                ? "contact"
+                                : item.toLowerCase();
+                      scrollToSection(id);
                     }}
                     className="cursor-pointer text-2xl block py-3 relative transition-all duration-250 text-[#666666] 
                             bg-gradient-to-r from-[#A0B43C] to-[#A0B43C] bg-[length:0%_100%] bg-left-bottom bg-no-repeat 

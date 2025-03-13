@@ -16,8 +16,7 @@ export default function SkillBar({
   return (
     <div className="w-full max-w-md mb-4">      
       <div className="flex justify-between items-center mb-1">
-        <span className="text-sm font-medium">{skillName}</span>
-        <span className="text-sm font-medium">{level}%</span>
+        <span className="text-sm text-[#666666] font-medium">{skillName}</span>        
       </div>
       
       <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">        

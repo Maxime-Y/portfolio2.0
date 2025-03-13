@@ -1,55 +1,69 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import a from "../public/a.png";
+import { motion } from "framer-motion";
 import { scrollToSection } from "../utils/scroll";
 
 export default function ProfilSection() {
   return (
-    <section id="profil" className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-[#F2F3EE]/70">
-    <div className="w-[200px] h-[200px] rounded-lg overflow-hidden border border-gray-300 mb-10">
-      <Image
-        src={a}
-        alt="Ma photo"
-        width={300}
-        height={200}
-        className="object-cover w-full h-full bg-[#666666] bg-opacity-50"
-      />
-    </div>
-    <h2 className="text-[#666666] text-3xl font-bold mb-8"
-      style={{ fontFamily: "var(--font-silkscreen)" }}
-    >A propos de moi</h2>
-    <p className="text-[#666666] text-2xl max-w-3xl mb-4">
-      Je suis un développeur junior passionné par l'informatique et les nouvelles technologies.
-      J'aime apprendre et relever de nouveaux défis. Je suis à la recherche d'une entreprise
-      qui me permettra de mettre en pratique mes compétences et d'évoluer dans un environnement
-      professionnel.
-      De nature curieuse, je suis toujours à la recherche de nouvelles technologies et de nouvelles
-      méthodes de travail. J'aime travailler en équipe et partager mes connaissances avec les autres.
-    </p>
-
-    <motion.div
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1, delay: 2.8, ease: "easeOut" }}
-      onClick={() => scrollToSection("profil")}
-      className="absolute bottom-1 left-1/2 transform -translate-x-1/2 cursor-pointer w-[50px] h-[90px] text-[#666666]"
+    <section
+      id="profil" className="relative min-h-screen min-w-screen flex flex-col items-center justify-center bg-[#F2F3EE]/90"
     >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-full h-full"
+      {/* Conteneur global avec le fond qui englobe tout */}
+      <div className="w-[800px] flex flex-col items-center p-5 bg-[#DAE0CA]/20 rounded-lg">
+        <h2 className="text-[#666666] text-center text-3xl font-bold mb-8"
+          style={{ fontFamily: "var(--font-silkscreen)" }}
+        >
+          A propos de moi
+        </h2>
+
+        {/* Image incluse dans le même conteneur */}
+        <div className="w-[150px] h-[150px] rounded-lg overflow-hidden border border-gray-300 mb-8">
+          <Image
+            src={a}
+            alt="Ma photo"
+            width={200}
+            height={200}
+            className="object-cover w-full h-full bg-[#666666] bg-opacity-50"
+          />
+        </div>
+
+        {/* Texte */}
+        <p className="text-[#666666] self-start text-xl max-w-3xl mb-2">
+          Bonjour à toutes et tous,
+        </p>
+        <p className="text-[#666666] text-xl max-w-3xl mb-2">
+          J'ai suivi une <span style={{ color: "#A4B350" }}>formation intensive de 7 mois</span> où j'ai découvert et approfondi
+          mes connaissances en language web. Cette expérience m’a ensuite conduit vers un 
+          <span style={{ color: "#A4B350" }}> stage en entreprise</span>, qui m’a permis de relever des défis auxquels un développeur doit faire face au quotidien.
+        </p>        
+        <p className="text-[#666666] text-xl max-w-3xl mb-2">
+          De nature <span style={{ color: "#A4B350" }}>curieuse, enjouée et dynamique</span>, Je suis à la recherche d'une <span style={{ color: "#A4B350" }}>entreprise</span> qui me donnera la chance de vivre cette <span style={{ color: "#A4B350" }}>passion</span> et évoluer jour après jour.
+        </p>
+      </div>
+
+      {/* Flèche pour scroller vers le bas */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 2.8, ease: "easeOut" }}
+        onClick={() => scrollToSection("competences")}
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 cursor-pointer w-[50px] h-[90px] text-[#666666]"
       >
-        {/* 2) Groupe animé pour le cercle + flèche */}
-        <g className="animate-bounce">
-          <polyline points="8 12 12 16 16 12" />
-        </g>
-      </svg>
-    </motion.div>
-  </section>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="w-full h-full"
+        >
+          <g className="animate-bounce">
+            <polyline points="8 12 12 16 16 12" />
+          </g>
+        </svg>
+      </motion.div>
+    </section>
   );
 }

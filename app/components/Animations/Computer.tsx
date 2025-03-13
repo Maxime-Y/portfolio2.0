@@ -21,10 +21,9 @@ export default function Computer() {
       style={{ width: "300px", height: "300px", margin: "0 0 0 21px" }}
       onEvent={(event) => {
         if (event === "complete") {
-            // @ts-ignore
-          playerRef.current?.goToLastFrame();
+          (playerRef.current as any)?.goToLastFrame();
         }
-      }}
+      }}      
     />
   );
 }
