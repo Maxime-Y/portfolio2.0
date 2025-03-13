@@ -3,24 +3,45 @@ import { motion } from "framer-motion";
 import SkillBar from "./Animations/SkillBar";
 import Image from "next/image";
 import { scrollToSection } from "../utils/scroll";
-import cvPreview from "../public/cv.png";
+import cvPreview from "../../public/cv.png";
 
 export default function SkillsSection() {
     return (
         <section
             id="competences"
-            className="relative min-h-screen min-w-screen flex flex-col items-center justify-center bg-[url('./public/fondecran2.jpg')] bg-cover bg-center"
+            className="relative min-h-screen min-w-screen flex flex-col items-center justify-center bg-[url('../public/fondecran2.jpg')] bg-cover bg-center"
         >
             {/* Overlay */}
             <div className="absolute inset-0 bg-[#F2F3EE]/80"></div>
 
             {/* Conteneur principal */}
             <div className="relative z-10 w-full max-w-6xl flex flex-col items-center min-h-[70vh]">
-                <h2
-                    className="text-2xl text-[#666666] font-bold text-center mt-6 mb-4"
-                    style={{ fontFamily: "var(--font-silkscreen)" }}
-                >
+                <h2 className="text-[#666666] text-center text-3xl font-bold mb-4 mt-4"
+                    style={{ fontFamily: "var(--font-silkscreen)" }}>
                     Compétences
+                    <span className="inline-block">
+                        <motion.span
+                            className="display-dots"
+                            animate={{ opacity: [0, 1, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+                        >
+                            .
+                        </motion.span>
+                        <motion.span
+                            className="display-dots"
+                            animate={{ opacity: [0, 1, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                        >
+                            .
+                        </motion.span>
+                        <motion.span
+                            className="display-dots"
+                            animate={{ opacity: [0, 1, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        >
+                            .
+                        </motion.span>
+                    </span>
                 </h2>
 
                 {/* Wrapper flex pour séparer les deux colonnes */}
@@ -31,7 +52,7 @@ export default function SkillsSection() {
                         {/* Container plus compact pour les skills */}
                         <div className="w-full max-w-3xl space-y-4">
                             {/* Grille pour Front-end & Back-end côte à côte */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Front-end */}
                                 <div className="space-y-1">
                                     <h3
@@ -62,7 +83,7 @@ export default function SkillsSection() {
                                     <SkillBar skillName="MySQL / PostgreSQL" level={80} barColor="#A4B350" />
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                                 <div className="space-y-1">
                                     <h3
@@ -92,10 +113,9 @@ export default function SkillsSection() {
                     </div>
 
                     {/* Colonne droite : CV + bouton */}
-                    <div className="flex flex-col items-center justify-center w-full lg:w-1/2 px-4 py-4 text-center">
-
+                    <div className="flex flex-col items-center justify-center w-full lg:w-1/2 px-4 py-4">
                         {/* Lien cliquable pour ouvrir le CV */}
-                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="w-[300px] h-[400px] mb-4">
+                        <a href="/cv.png" target="_blank" rel="noopener noreferrer" className="w-[380px] h-[480px] mb-4 -mt-1">
                             <div className="w-full h-full overflow-hidden border border-gray-400 shadow-lg rounded-lg mb-4 cursor-pointer hover:opacity-80 transition-opacity">
                                 <Image
                                     src={cvPreview}
@@ -109,10 +129,10 @@ export default function SkillsSection() {
 
                         {/* Bouton pour télécharger */}
                         <a
-                            href="/cv.pdf"
+                            href="/cv.png"
                             download
                             className="px-3 py-2 text-xs xs:text-sm sm:text-sm md:text-sm lg:text-sm
-        border-2 border-[#666666] bg-transparent rounded-lg cursor-pointer hidden-button fade-in button-hover-effect"
+                            border-2 border-[#666666] bg-transparent rounded-lg cursor-pointer hidden-button fade-in button-hover-effect"
                             style={{ fontFamily: "var(--font-silkscreen)" }}
                         >
                             <span className="text">Télécharger le CV</span>

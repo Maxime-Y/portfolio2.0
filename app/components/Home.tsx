@@ -1,5 +1,5 @@
 import Image from "next/image";
-import fond from "../public/fondecran.jpg";
+import fond from "../../public/fondecran.jpg";
 import TxtRotate from "./Animations/TxtRotate";
 import TxtToDisplay from "./Animations/TxtToDisplay";
 import PixelText from "./Animations/PixelText";

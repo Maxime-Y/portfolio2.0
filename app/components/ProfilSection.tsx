@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import a from "../public/a.png";
+import a from "../../public/a.png";
 import { motion } from "framer-motion";
 import { scrollToSection } from "../utils/scroll";
 
@@ -12,9 +12,31 @@ export default function ProfilSection() {
       {/* Conteneur global avec le fond qui englobe tout */}
       <div className="w-[800px] flex flex-col items-center p-5 bg-[#DAE0CA]/20 rounded-lg">
         <h2 className="text-[#666666] text-center text-3xl font-bold mb-8"
-          style={{ fontFamily: "var(--font-silkscreen)" }}
-        >
+          style={{ fontFamily: "var(--font-silkscreen)" }}>
           A propos de moi
+          <span className="inline-block">
+            <motion.span
+              className="display-dots"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+            >
+              .
+            </motion.span>
+            <motion.span
+              className="display-dots"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            >
+              .
+            </motion.span>
+            <motion.span
+              className="display-dots"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              .
+            </motion.span>
+          </span>
         </h2>
 
         {/* Image incluse dans le même conteneur */}
@@ -22,9 +44,9 @@ export default function ProfilSection() {
           <Image
             src={a}
             alt="Ma photo"
-            width={200}
-            height={200}
-            className="object-cover w-full h-full bg-[#666666] bg-opacity-50"
+            width={300}
+            height={300}
+            className="object-cover w-full h-full bg-[#D1D8AA] bg-opacity-50"
           />
         </div>
 
@@ -34,9 +56,9 @@ export default function ProfilSection() {
         </p>
         <p className="text-[#666666] text-xl max-w-3xl mb-2">
           J'ai suivi une <span style={{ color: "#A4B350" }}>formation intensive de 7 mois</span> où j'ai découvert et approfondi
-          mes connaissances en language web. Cette expérience m’a ensuite conduit vers un 
-          <span style={{ color: "#A4B350" }}> stage en entreprise</span>, qui m’a permis de relever des défis auxquels un développeur doit faire face au quotidien.
-        </p>        
+          mes connaissances en languages web. Cette expérience m’a ensuite conduit vers un
+          <span style={{ color: "#A4B350" }}> stage chez Peppersoft</span>, qui m’a permis de relever de nombreux défis auxquels un développeur doit faire face au quotidien.
+        </p>
         <p className="text-[#666666] text-xl max-w-3xl mb-2">
           De nature <span style={{ color: "#A4B350" }}>curieuse, enjouée et dynamique</span>, Je suis à la recherche d'une <span style={{ color: "#A4B350" }}>entreprise</span> qui me donnera la chance de vivre cette <span style={{ color: "#A4B350" }}>passion</span> et évoluer jour après jour.
         </p>

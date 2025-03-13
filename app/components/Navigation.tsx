@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { scrollToSection } from "../utils/scroll";
 import Image from "next/image";
-import home from "../public/home.png";
+import home from "../../public/home.png";
 
 const navItems = ["Profil", "Compétences", "Projets", "Contact"];
 

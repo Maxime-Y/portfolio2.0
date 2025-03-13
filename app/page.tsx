@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 import ProfilSection from "./components/ProfilSection";
 import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectsSection";
-import ContactSection from "./components/ContactSection";
+import ContactSection from "./components/contact/ContactSection";
 
 
 export default function Home() {
