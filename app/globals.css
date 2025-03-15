@@ -62,7 +62,7 @@ body {
 .button-hover-effect::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0;  
   background: #666666;
   transform: scaleX(0);
   transform-origin: left;

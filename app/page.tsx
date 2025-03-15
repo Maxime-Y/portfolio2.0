@@ -1,13 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import HomePage from "./components/Home";
-import Navigation from "./components/Navigation";
-// import Navbar from "./components/Navbar";
 import ProfilSection from "./components/ProfilSection";
 import SkillsSection from "./components/SkillsSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ContactSection from "./components/contact/ContactSection";
+import ProjectSection from "./components/ProjectSection";
+import ContactSection from "./components/ContactSection";
 
 
 export default function Home() {
@@ -27,13 +24,12 @@ export default function Home() {
       </section>      
 
       <section id="projets">
-        <ProjectsSection />
+        <ProjectSection />
       </section>
 
       <section id="contact">
         <ContactSection />
       </section>
-
     </main>
   );
 }

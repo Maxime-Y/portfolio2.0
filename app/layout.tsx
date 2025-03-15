@@ -3,8 +3,6 @@ import { Geist, Geist_Mono, Anta, Dancing_Script, Silkscreen } from "next/font/g
 import "./globals.css";
 import BackToTopButton from "./components/Animations/BackToTopButton";
 import Navigation from "./components/Navigation";
-import FooterSection from "./components/FooterSection";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,9 +49,8 @@ export default function RootLayout({
       >
         <Navigation />
         {/* <Navbar /> */}
-        {children}
-        <BackToTopButton />
-        <FooterSection />
+        {children}        
+        <BackToTopButton />               
       </body>
     </html>
   );

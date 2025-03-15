@@ -33,10 +33,10 @@ export default function TxtToDisplay() {
 
   return (
     <div className="text-center">
-      <h2 className="text-[18px]         /* Par défaut, écrans < 480px */
-                     xs:text-sm          /* ≥ 480px: text-sm */
-                     sm:text-lg          /* ≥ 640px: text-lg */
-                     md:text-xl          /* ≥ 768px: text-xl */
+      <h2 className="text-[24px]         /* Par défaut, écrans < 480px */
+                     xs:text-2xl          /* ≥ 480px: text-sm */
+                     sm:text-2xl         /* ≥ 640px: text-lg */
+                     md:text-2xl          /* ≥ 768px: text-xl */
                      lg:text-4xl      
                      text-[#A0B43C] font-semibold mb-5 min-h-[50px]">
         {displayedText}

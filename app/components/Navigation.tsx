@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { scrollToSection } from "../utils/scroll";
+import { scrollToSection } from "../../utils/scroll";
 import Image from "next/image";
 import home from "../../public/home.png";
 
@@ -85,11 +85,11 @@ export default function Navigation() {
                             : item.toLowerCase();
                   scrollToSection(id);
                 }}
-                className="relative inline-block cursor-pointer"
+                className="relative inline-block cursor-pointer transition-transform duration-200 group hover:scale-105"
               >
                 {item}
-                {/* Soulignement progressif */}
-                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-[#666666] transition-all duration-200 group-hover:w-full"></span>
+                {/* Soulignement progressif depuis le centre */}
+                <span className="absolute left-1/2 bottom-[-3px] w-0 h-[2px] bg-[#666666] transition-all duration-200 transform -translate-x-1/2 group-hover:w-full"></span>
               </a>
             </motion.li>
           ))}
